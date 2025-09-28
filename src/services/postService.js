@@ -13,7 +13,7 @@ class PostService {
   }
 
   async getPostById(postId) {
-    return await postRepository.findById(postId);
+    return await postRepository.findById(postId); // ✅ ahora existe
   }
 
   async updatePost(postId, postData) {
@@ -26,4 +26,3 @@ class PostService {
 }
 
 export default new PostService();
-
