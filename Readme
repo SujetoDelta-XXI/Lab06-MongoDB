@@ -1,35 +1,33 @@
 # 📦 SocialMedia – Node.js + MongoDB
 
-Aplicación web CRUD para gestionar **Posts** relacionados con **Usuarios**, desarrollada con **Node.js**, **Express**, **EJS**, **MongoDB** y **Mongoose**.
-
----
+Aplicación web CRUD para gestionar **Posts** 
 
 ## 🚀 Instalación
 1. Clona el repositorio e instala las dependencias:
-```bash
+
 git clone https://github.com/usuario/socialmedia-app.git
 cd socialmedia-app
 npm install
-Crea el archivo .env en la raíz del proyecto:
+
+
+2. Crea el archivo .env en la raíz del proyecto:
 
 env
-Copiar código
 MONGO_URI=mongodb://localhost:27017/socialmedia
 PORT=3001
-Inicia el servidor:
 
-bash
-Copiar código
+
+3. Inicia el servidor:
+
 npm run dev
 La app estará disponible en 👉 http://localhost:3001
 
-👤 Crear Usuario (Requerido)
+
+4. 👤 Crear Usuario (Requerido)
 Antes de crear posts, debes tener al menos un usuario registrado en la colección users de MongoDB.
 
 Ejecuta en mongosh:
 
-bash
-Copiar código
 use socialmedia
 
 db.users.insertOne({
@@ -51,12 +49,13 @@ db.users.insertOne({
   password: "password456",
   createdAt: new Date()
 })
-Verifica que se crearon correctamente:
 
-bash
-Copiar código
+Verifica que se crearon correctamente:
 db.users.find().pretty()
-✍️ Funcionalidades
+
+
+5. ✍️ Funcionalidades
+
 CRUD de Posts.
 
 Selección del autor desde un menú desplegable.
@@ -71,10 +70,9 @@ title entre 5 y 30 caracteres.
 
 content mínimo 10 caracteres.
 
-Relación de posts con users mediante ObjectId.
 
-🔗 Endpoints Principales
-Método	Ruta	Descripción
+6. 🔗 Endpoints Principales
+
 GET	/	Página principal (Home)
 GET	/posts	Lista de todos los posts
 GET	/posts/add	Formulario para crear post
@@ -83,15 +81,13 @@ GET	/posts/edit/:id	Formulario para editar post
 POST	/posts/update/:id	Actualizar post
 GET	/posts/delete/:id	Eliminar post
 
-📌 Notas
+
+7. 📌 Notas
 Debes crear un usuario antes de registrar posts.
 
 Puedes usar MongoDB Compass o mongosh para gestionar los datos.
 
 Ejecuta estos comandos para ver los datos:
-
-bash
-Copiar código
 use socialmedia
 show collections
 db.users.find().pretty()
